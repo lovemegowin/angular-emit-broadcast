@@ -1,0 +1,32 @@
+<style>  
+     .red{  
+         background: red;  
+     }  
+     .yellow{  
+         background: yellow;  
+     }  
+  
+     div a {  
+         text-decoration: none;  
+     }  
+  
+ </style>  
+ <script src="js/angular.min.js"></script>  
+ <script>  
+     var app = angular.module("myApp",[]);  
+     app.controller("myCtrl", function($scope){  
+         $scope.text = "hello";  
+         $scope.sClass = "{red:true}";  
+         //$scope.url = "http://www.baidu.com";  
+         $scope.url = "http://www.baidu.com";  
+     })  
+ </script>  
+ <div ng-controller="myCtrl">  
+        <div ng-class="{{sClass}}">{{text}}</div>  
+        <div ng-class="{red:true,yellow:true}">{{text}}</div>  
+        <div ng-style="{background:'red',color:'white'}">{{text}}</div>  
+        <div>  
+            <a ng-href="{{url}}">aaaaa</a><br/>  
+            <a ng-attr-href="{{url}}" ng-attr-title="{{text}}" ng-attr-class="" ng-attr-style="">aaaaa</a>  
+        </div>  
+    </div>  
